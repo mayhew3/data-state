@@ -8,6 +8,7 @@ import {NgxsLoggerPluginModule} from '@ngxs/logger-plugin';
 import { CreateComponent } from './components/create/create.component';
 import { IndexComponent } from './components/index/index.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import {UserState} from './state/user.state';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,9 @@ import {ReactiveFormsModule} from '@angular/forms';
   ],
   imports: [
     BrowserModule,
-    NgxsModule.forRoot(),
+    NgxsModule.forRoot([
+      UserState
+    ]),
     NgxsReduxDevtoolsPluginModule.forRoot(),
     NgxsLoggerPluginModule.forRoot(),
     ReactiveFormsModule

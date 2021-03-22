@@ -1,5 +1,10 @@
+// create.component.ts
+
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngxs/store';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+
+import { AddUser } from '../../actions/user.action';
 
 @Component({
   selector: 'app-create',
@@ -10,22 +15,22 @@ export class CreateComponent implements OnInit {
 
   angForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private store: Store) {
     this.createForm();
   }
 
-  createForm() {
+  createForm(): void {
     this.angForm = this.fb.group({
       name: ['', Validators.required ],
       email: ['', Validators.required ]
     });
   }
 
-  addUser(name, email) {
-    console.log(name, email);
+  addUser(name, email): void {
+    this.store.dispatch(new AddUser({ name, email}));
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
 }
