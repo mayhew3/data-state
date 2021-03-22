@@ -1,5 +1,3 @@
-// user.action.ts
-
 import { User } from '../models/User';
 
 export class AddUser {

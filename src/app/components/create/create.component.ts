@@ -1,10 +1,8 @@
-// create.component.ts
+import {Component, OnInit} from '@angular/core';
+import {Store} from '@ngxs/store';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
-import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngxs/store';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-
-import { AddUser } from '../../actions/user.action';
+import {AddUser} from '../../actions/user.action';
 
 @Component({
   selector: 'app-create',

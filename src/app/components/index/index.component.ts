@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Store, Select } from '@ngxs/store';
-import { User } from '../../models/User';
-import { Observable } from 'rxjs';
+import {Component, OnInit} from '@angular/core';
+import {Store} from '@ngxs/store';
+import {User} from '../../models/User';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-index',
